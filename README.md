@@ -1,6 +1,6 @@
 # Sample
 
 ```
-$ swift build --triple wasm32-unknown-wasi
-$ wasmtime ./.build/debug/Sample.wasm
+$ swift build --triple wasm32-unknown-wasi -Xcc -msimd128 -c release
+$ wasmtime run --enable-simd .build/release/Sample.wasm
 ```

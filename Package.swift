@@ -6,5 +6,6 @@ let package = Package(
     name: "Sample",
     targets: [
         .executableTarget(name: "Sample"),
+        .target(name: "_CSample"),
     ]
 )
