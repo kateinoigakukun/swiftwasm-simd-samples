@@ -25,6 +25,11 @@ func makePoints() -> (Point, Point) {
 let N: UInt64 = 1_000_000_000
 
 @inline(never)
+func doSIMD_C(_ vec1: v128_t, _ vec2: v128_t) -> v128_t {
+    return _CSample.doSIMD_C(vec1, vec2)
+}
+
+@inline(never)
 func doSIMD(_ vec1: v128_t, _ vec2: v128_t) -> v128_t {
     var vec1 = vec1
     for _ in 0..<N {
